@@ -33,14 +33,14 @@ def download_data():
 	           "capital_gain", "capital_loss", "hours_per_week", "native_country",
 	           "income_bracket"]
     print("downloading training data...")
-    df_train = pd.read_csv("http://mlr.cs.umass.edu/ml/machine-learning-databases/adult/adult.data",
+    df_train = pd.read_csv("https://archive.ics.uci.edu/ml/datasets/adult/adult.data",
 	    names=COLUMNS, skipinitialspace=True, index_col=0)
     df_train.drop("education_num", axis=1, inplace=True)
     df_train.to_csv(train_path)
     df_train.to_csv(PATH / 'train/train.csv')
 
     print("downloading testing data...")
-    df_test = pd.read_csv("http://mlr.cs.umass.edu/ml/machine-learning-databases/adult/adult.test",
+    df_test = pd.read_csv("https://archive.ics.uci.edu/ml/datasets/adult/adult.test",
                           names=COLUMNS, skipinitialspace=True, skiprows=1, index_col=0)
     df_test.drop("education_num", axis=1, inplace=True)
     df_test.to_csv(test_path)
